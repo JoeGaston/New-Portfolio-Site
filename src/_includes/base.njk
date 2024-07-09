@@ -1,0 +1,26 @@
+<!-- ninjux is a templating language 
+    THIS IS THE BASE FILE FOR ALL OF MY BLOG TEMPLATES. ALL OF THE BRACES POINT TO .NJK FILES IN THE SRC FOLDER.
+    Anywhere I put front matter will show up in here as long as it is included in this document.
+    The curly braces are ninjux syntax
+
+
+
+
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title> <!-- This is coming from the index.njk "front matter" fields !-->
+    <link rel="stylesheet" href ="/style.css"> <!-- This is coming from the style sheet in my src folder !-->
+</head>
+<body>
+    {% include 'header.njk' %} <!-- Ingests header.njk information !--> 
+    {{ content | safe }} <!-- This is coming from the index.njk "front matter" fields. It takes any content from the page under front matter. Safe just makes it render in HTML instead of a string !-->
+    {% include 'footer.njk' %} <!-- Ingests footer.njk information !--> 
+</body>
+</html>
